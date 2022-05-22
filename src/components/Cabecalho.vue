@@ -31,6 +31,7 @@ nav{
     display: flex;
     background-color: #9206E9;
     align-items: center;
+    height: 5rem;
 }
 
 img{
@@ -56,6 +57,7 @@ p{
     border: 1px solid #FFFFFF;
     border-radius: 8px;
     padding: 0.5rem 6rem 0.5rem 0.5rem;
+    font-weight: 700;
 }
 
 .cidade_secundario{
