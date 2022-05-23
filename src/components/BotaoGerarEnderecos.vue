@@ -45,4 +45,11 @@ button:hover{
 hr{
     width: 100%;
 }
+
+@media only screen and (max-width: 375px){
+    button{
+        width: 100%;
+    }
+}
+
 </style>
