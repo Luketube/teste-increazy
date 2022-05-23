@@ -8,6 +8,7 @@
             </div>
             <p class="cep">13284-054</p>    
         </div>
+        <div class="linha_vertical"></div>
         <img src="../assets/icone-lixo.svg" alt="Icone de lixeira">
     </div>
 
@@ -27,7 +28,7 @@ export default{
     box-shadow: 5px 10px 25px 0px #888888;
     display: flex;
     margin-top: 3rem;
-    padding: 2rem 0.5rem;
+    padding: 1rem 0.5rem;
 }
 
 img{
@@ -52,8 +53,12 @@ img{
 
 .cep{
     color: #B600EE;
-    border-right: 1px solid #E0E6EA;
     padding: 1rem 1.5rem;
+}
+
+.linha_vertical{
+    border: 1px solid #E0E6EA;
+    height: 85px;
     margin-right: 0.5rem;
 }
 
