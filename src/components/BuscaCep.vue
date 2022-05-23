@@ -88,4 +88,18 @@ img {
 .invalido {
     border-color: tomato;
 }
+
+@media only screen and (max-width: 768px) {
+    div{
+        flex-direction: column;
+        padding: 00rem;
+    }
+    input{
+        width: 50%;
+    }
+    button{
+        width: 100%;
+    }
+}
+
 </style>

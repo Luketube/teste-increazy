@@ -37,7 +37,6 @@ aside {
 }
 
 .aside_top {
-
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -70,5 +69,24 @@ button:hover {
 
 .infinito{
     height: 100%;
+}
+
+@media only screen and (max-width: 768px){
+    div{
+        display: block;
+    }
+    aside{
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        max-width: 100%;
+        
+    }
+    .aside_top{
+        flex-direction: row;   
+    }
+    .infinito{
+        height: 0;
+    }
 }
 </style>

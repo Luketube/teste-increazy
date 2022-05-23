@@ -67,4 +67,14 @@ main {
   margin-left: 3rem;
   max-width: 50%;
 }
+
+@media only screen and (max-width: 768px){
+  main{
+    flex-direction: column;
+  }
+  .conteudo{
+    margin: 0 1rem 3rem 1rem;;
+    max-width: 100%;
+  }
+}
 </style>

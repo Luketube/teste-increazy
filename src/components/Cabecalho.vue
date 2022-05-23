@@ -86,4 +86,19 @@ button:hover{
     padding: 0 1rem 0 1.5rem;
     white-space: nowrap
 }
+
+@media only screen and (max-width: 768px) {
+    .logo{
+        display: none;
+    }
+    .cidade{
+        border: none;
+    }
+    .info{
+        margin-left: 1rem;
+    }
+    .usuario_nome{
+        display: none;
+    }
+}
 </style>
