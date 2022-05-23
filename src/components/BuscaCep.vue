@@ -1,26 +1,63 @@
 <template>
-<div>
-    <input type="text" placeholder="Insira o CEP">
-    <button type="reset"><img src="../assets/icone-plus.svg">Adicionar endereço</button>
-</div>
-    
+    <div>
+        <input type="text" placeholder="Insira o CEP"
+        pattern="[\d]{5}-?[\d]{3}">
+        <button type="reset" @click="obtemCep"><img src="../assets/icone-plus.svg">Adicionar endereço</button>
+    </div>
+
 
 </template>
 
 <script>
-export default{
-    name: 'BuscaCep'
-}
+export default {
+    name: 'BuscaCep',
+    props: {
+        data:{}
+    },
+    methods: {
+        obtemCep() {
+            const input = document.querySelector('input');
+            const cep = input.value.replace(/\D/g, '');
+            const url = `https://viacep.com.br/ws/${cep}/json/`;
+            const options = {
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'content-type': 'application/json;charset=utf-8'
+                }
+            }
+            if(!input.validity.patternMismatch && !input.validity.valueMissing){
+                fetch(url, options).then(
+                    response => response.json()
+                ).then(
+                    data => {
+                        if(data.erro){
+                            input.classList.add('invalido');
+                            return;
+                        }
+                        input.setCustomValidity('');
+                        input.classList.remove('invalido')
+                        return;
+                    }
+                )
+            } else {
+                input.classList.add('invalido');
+            }
+        },
 
+    }
+
+}
 </script>
 
 <style scoped>
-div{
+div {
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
-input{
+
+input {
     border: solid 2px #BBC4CE;
     border-radius: 8px;
     margin: 2rem 3rem 2rem 0;
@@ -28,7 +65,7 @@ input{
     width: 300px;
 }
 
-button{
+button {
     background-color: #B600EE;
     border: none;
     border-radius: 8px;
@@ -39,14 +76,17 @@ button{
     width: 300px;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
-img{
+img {
     align-items: center;
     margin-right: 1rem;
     max-width: 18px;
 }
 
+.invalido{
+    border-color: tomato;
+}
 </style>
