@@ -101,4 +101,9 @@ button:hover{
         display: none;
     }
 }
+@media only screen and (max-width: 375px){
+    .usuario{
+        display: none;
+    }
+}
 </style>
