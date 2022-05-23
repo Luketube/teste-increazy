@@ -1,19 +1,17 @@
 <template>
     <div>
-        <input type="text" placeholder="Insira o CEP"
-        pattern="[\d]{5}-?[\d]{3}">
+        <input type="text" placeholder="Insira o CEP" pattern="[\d]{5}-?[\d]{3}">
         <button type="reset" @click="obtemCep"><img src="../assets/icone-plus.svg">Adicionar endereço</button>
     </div>
-
 
 </template>
 
 <script>
+
 export default {
     name: 'BuscaCep',
-    props: {
-        data:{}
-    },
+    emits: ['aoEncontrarCep'],
+
     methods: {
         obtemCep() {
             const input = document.querySelector('input');
@@ -26,25 +24,26 @@ export default {
                     'content-type': 'application/json;charset=utf-8'
                 }
             }
-            if(!input.validity.patternMismatch && !input.validity.valueMissing){
+            if (!input.validity.patternMismatch && !input.validity.valueMissing) {
                 fetch(url, options).then(
                     response => response.json()
                 ).then(
                     data => {
-                        if(data.erro){
+                        if (data.erro) {
                             input.classList.add('invalido');
                             return;
                         }
                         input.setCustomValidity('');
                         input.classList.remove('invalido')
-                        return;
+                        this.$emit('aoEncontrarCep', {
+                            cep: data.cep
+                        })
                     }
                 )
             } else {
                 input.classList.add('invalido');
             }
-        },
-
+        }
     }
 
 }
@@ -86,7 +85,7 @@ img {
     max-width: 18px;
 }
 
-.invalido{
+.invalido {
     border-color: tomato;
 }
 </style>

@@ -5,8 +5,13 @@
   <main>
     <BarraLateral />
     <div class="conteudo">
-      <BuscaCep />
-      <ListaCeps />
+      <BuscaCep @aoEncontrarCep="adicionaCep" />
+      <div class="lista_cep">
+        <Ceps v-for="(cep, index) in ceps" :key="index" :cep="cep"/>
+        
+      
+      </div>
+      <BotaoGerarEnderecos />
       <CardsCep />
     </div>
   </main>
@@ -16,9 +21,9 @@
 import CabecalhoNotificacao from './components/Cabecalho.vue';
 import BarraLateral from './components/BarraLateral.vue';
 import BuscaCep from './components/BuscaCep.vue';
-import ListaCeps from './components/ListaCeps.vue';
+import Ceps from './components/Ceps.vue'
 import CardsCep from './components/CardsCep.vue';
-
+import BotaoGerarEnderecos from './components/BotaoGerarEnderecos.vue';
 
 export default {
   name: 'App',
@@ -26,20 +31,30 @@ export default {
     CabecalhoNotificacao,
     BarraLateral,
     BuscaCep,
-    ListaCeps,
-    CardsCep
-}
+    Ceps,
+    CardsCep,
+    BotaoGerarEnderecos
+},
+  data () {
+    return {
+      ceps: []
+    }
+  },
+  methods: {
+    adicionaCep (cep){
+      this.ceps.push(cep);
+    }
+  }
 }
 </script>
 
 <style scoped>
-main{
+main {
   display: flex;
 }
 
-.conteudo{
+.conteudo {
   margin-left: 3rem;
   max-width: 50%;
 }
-
 </style>
