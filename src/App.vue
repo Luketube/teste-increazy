@@ -14,7 +14,7 @@
       <BotaoGerarEnderecos @aoGerarEnderecos="adicionaCard"/>
 
       <div class="cards">
-        <CardsCep v-for="(card, index) in cards" :key="index" :arrayCeps="cepsGerados" :posicao="index"/>
+        <CardsCep @cardRemovido="removeCard" v-for="(card, index) in cards" :key="index" :arrayCeps="cepsGerados" :posicao="index"/>
       </div>
 
     </div>
@@ -53,6 +53,12 @@ export default {
     },
     adicionaCard (card){
       this.cards.push(card);
+    },
+    removeCard(posicao){
+      console.log(posicao);
+      this.ceps.splice(posicao.posicao, 1);
+      this.cepsGerados.splice(posicao.posicao, 1);
+      this.cards.splice(posicao.posicao, 1);
     }
   }
 }

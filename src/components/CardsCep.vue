@@ -9,7 +9,7 @@
             <p class="cep">{{ arrayCeps[posicao].cep.cep }}</p>
         </div>
         <div class="linha_vertical"></div>
-        <button><img src="../assets/icone-lixo.svg" alt="Icone de lixeira"></button>
+        <button @click="excluiCard"><img src="../assets/icone-lixo.svg" alt="Icone de lixeira"></button>
     </div>
 
 </template>
@@ -23,6 +23,14 @@ export default {
         },
         posicao: {
             type: Number
+        }
+    },
+    emits:['cardRemovido'],
+    methods: {
+        excluiCard(){
+            this.$emit('cardRemovido', {
+                posicao: this.posicao
+            })
         }
     }
 }
