@@ -9,7 +9,7 @@
                     <p class="cidade_secundario">VTEX</p>
             </div>
             <div>
-                <img src="../assets/icone-bell.svg" alt="Icone de sino">
+                <button><img src="../assets/icone-bell.svg" alt="Icone de sino"></button>
             </div>
         </div>
         <div class="usuario">
@@ -64,6 +64,14 @@ p{
     margin-top: 0.5rem;
     font-size: 0.75rem;
     font-weight: 100;
+}
+
+button{
+    border: none;
+    background-color: #9206E9;
+}
+button:hover{
+    cursor: pointer;
 }
 
 .usuario{

@@ -9,7 +9,8 @@
             <p class="cep">13284-054</p>    
         </div>
         <div class="linha_vertical"></div>
-        <img src="../assets/icone-lixo.svg" alt="Icone de lixeira">
+        <button><img src="../assets/icone-lixo.svg" alt="Icone de lixeira"></button>
+        
     </div>
 
 </template>
@@ -60,6 +61,15 @@ img{
     border: 1px solid #E0E6EA;
     height: 85px;
     margin-right: 0.5rem;
+}
+
+button{
+    border: none;
+    background-color: #FFFFFF;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 </style>

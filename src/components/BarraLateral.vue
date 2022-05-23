@@ -2,10 +2,11 @@
 
 <aside>
     <div class="aside_top">
-        <img class="icons icons_top" src="../assets/icone-busca.svg" alt="Icone de bússola">
-        <img class="icons icons_top" src="../assets/icone-folder2.svg" alt="Icone de pasta">
+        <button><img class="icons icons_top" src="../assets/icone-busca.svg" alt="Icone de bússola"></button>
+        <button><img class="icons icons_top" src="../assets/icone-folder2.svg" alt="Icone de pasta"></button>    
     </div>
-    <img class="icons aside_bottom" src="../assets/icone-ajuste.svg" alt="">
+    <button><img class="icons aside_bottom" src="../assets/icone-ajuste.svg" alt="">
+</button>
 </aside>
 
 
@@ -28,6 +29,7 @@ aside{
     justify-content: space-between;
     max-width: 5.5rem;
     height: calc(100vh - 5rem);
+    padding: 0rem 1rem;
 }
 
 .aside_top{
@@ -35,6 +37,15 @@ aside{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+}
+
+
+button{
+    border: none;
+    background-color: #F6F6F6;
+}
+button:hover{
+    cursor: pointer;
 }
 
 .icons_top{
