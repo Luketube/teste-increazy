@@ -8,7 +8,6 @@
         <button><img class="icons aside_bottom" src="../assets/icone-ajuste.svg" alt="">
         </button>
     </aside>
-    <aside class="infinito"></aside>
 </div>
 </template>
 
@@ -67,10 +66,6 @@ button:hover {
     margin-bottom: 1rem;
 }
 
-.infinito{
-    height: 100%;
-}
-
 @media only screen and (max-width: 768px){
     div{
         display: block;
@@ -84,9 +79,6 @@ button:hover {
     }
     .aside_top{
         flex-direction: row;   
-    }
-    .infinito{
-        height: 0;
     }
 }
 </style>
