@@ -6,13 +6,17 @@
     <BarraLateral />
     <div class="conteudo">
       <BuscaCep @aoEncontrarCep="adicionaCep" />
+
       <div class="lista_cep">
-        <Ceps v-for="(cep, index) in ceps" :key="index" :cep="cep"/>
-        
-      
+        <Ceps v-for="(cep, index) in ceps" :key="index" :cep="cep.cep"/>
       </div>
-      <BotaoGerarEnderecos />
-      <CardsCep />
+
+      <BotaoGerarEnderecos @aoGerarEnderecos="adicionaCard"/>
+
+      <div class="cards">
+        <CardsCep v-for="(card, index) in cards" :key="index" :arrayCeps="cepsGerados" :posicao="index"/>
+      </div>
+
     </div>
   </main>
 </template>
@@ -37,12 +41,22 @@ export default {
 },
   data () {
     return {
-      ceps: []
+      ceps: [],
+      cepsGerados: [],
+      cards: []
     }
   },
   methods: {
     adicionaCep (cep){
       this.ceps.push(cep);
+      this.cepsGerados.push(cep)
+      
+      
+    },
+    adicionaCard (card){
+      this.cards.push(card);
+      
+      console.log(this.cepsGerados[0].cep.logradouro);
     }
   }
 }

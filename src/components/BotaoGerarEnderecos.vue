@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button>Gerar Endereços</button>
+        <button @click="geraEnderecos">Gerar Endereços</button>
         <hr>
     </div>
     
@@ -9,7 +9,13 @@
 
 <script>
 export default{
-    name: 'BotaoGerarEnderecos'
+    name: 'BotaoGerarEnderecos',
+    emits: ['aoGerarEnderecos'],
+    methods: {
+        geraEnderecos() {
+            this.$emit('aoGerarEnderecos')
+        }
+    }
 }
 
 </script>
@@ -31,6 +37,9 @@ button{
     margin: 3rem 0;
     padding: 1rem;
     width: 300px;
+}
+button:hover{
+    cursor: pointer;
 }
 
 hr{

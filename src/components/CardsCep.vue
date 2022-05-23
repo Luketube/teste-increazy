@@ -3,10 +3,10 @@
         <img src="../assets/icone-lugar.svg" alt="Icone de localização de mapas">
         <div class="card_conteudo">
             <div>
-            <p class="nome_rua">Rua Luiz Briski</p>
-            <p>Vinhedo - SP</p>
+            <p class="nome_rua">{{ arrayCeps[posicao].cep.logradouro }}</p>
+            <p>{{ arrayCeps[posicao].cep.localidade }} - {{ arrayCeps[posicao].cep.uf }}</p>
             </div>
-            <p class="cep">13284-054</p>    
+            <p class="cep">{{ arrayCeps[posicao].cep.cep }}</p>    
         </div>
         <div class="linha_vertical"></div>
         <button><img src="../assets/icone-lixo.svg" alt="Icone de lixeira"></button>
@@ -17,7 +17,15 @@
 
 <script>
 export default{
-    name: 'CardsCep'
+    name: 'CardsCep',
+    props: {
+        arrayCeps:{
+            type: Object
+        },
+        posicao:{
+            type: Number
+        }
+    }
 }
 
 </script>

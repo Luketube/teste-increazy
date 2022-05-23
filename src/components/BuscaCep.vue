@@ -36,7 +36,7 @@ export default {
                         input.setCustomValidity('');
                         input.classList.remove('invalido')
                         this.$emit('aoEncontrarCep', {
-                            cep: data.cep
+                            cep: data
                         })
                     }
                 )
