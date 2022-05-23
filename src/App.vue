@@ -50,13 +50,9 @@ export default {
     adicionaCep (cep){
       this.ceps.push(cep);
       this.cepsGerados.push(cep)
-      
-      
     },
     adicionaCard (card){
       this.cards.push(card);
-      
-      console.log(this.cepsGerados[0].cep.logradouro);
     }
   }
 }

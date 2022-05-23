@@ -1,15 +1,15 @@
 <template>
-
-<aside>
-    <div class="aside_top">
-        <button><img class="icons icons_top" src="../assets/icone-busca.svg" alt="Icone de bússola"></button>
-        <button><img class="icons icons_top" src="../assets/icone-folder2.svg" alt="Icone de pasta"></button>    
-    </div>
-    <button><img class="icons aside_bottom" src="../assets/icone-ajuste.svg" alt="">
-</button>
-</aside>
-
-
+<div>
+    <aside>
+        <div class="aside_top">
+            <button><img class="icons icons_top" src="../assets/icone-busca.svg" alt="Icone de bússola"></button>
+            <button><img class="icons icons_top" src="../assets/icone-folder2.svg" alt="Icone de pasta"></button>
+        </div>
+        <button><img class="icons aside_bottom" src="../assets/icone-ajuste.svg" alt="">
+        </button>
+    </aside>
+    <aside class="infinito"></aside>
+</div>
 </template>
 
 <script>
@@ -21,7 +21,11 @@ export default {
 </script>
 
 <style scoped>
-aside{
+div{
+    display: flex;
+    flex-direction: column;
+}
+aside {
     align-items: center;
     background-color: #F6F6F6;
     display: flex;
@@ -32,35 +36,39 @@ aside{
     padding: 0rem 1rem;
 }
 
-.aside_top{
-    
+.aside_top {
+
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
 
 
-button{
+button {
     border: none;
     background-color: #F6F6F6;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
 }
 
-.icons_top{
+.icons_top {
     margin: 2rem 0;
 }
 
-.icons{
+.icons {
     max-width: 32px;
 }
 
-.aside_bottom{
+.aside_bottom {
     background-color: #20272C;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
 
+.infinito{
+    height: 100%;
+}
 </style>
